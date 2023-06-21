@@ -1,0 +1,12 @@
+[book]
+authors = ["seasawher"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Theorem Proving in Lean 4"
+
+[build]
+build-dir = "book"
+
+[output.html]
+additional-js = ["highlight.js"]
