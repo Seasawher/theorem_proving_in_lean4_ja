@@ -10,3 +10,6 @@ build-dir = "book"
 
 [output.html]
 additional-js = ["highlight.js"]
+
+[output.html.code.hidelines]
+lean = "# "
