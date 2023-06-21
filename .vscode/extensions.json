@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "tamasfe.even-better-toml",
+        "leanprover.lean4"
+    ]
+}
