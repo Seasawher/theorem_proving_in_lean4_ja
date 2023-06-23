@@ -10,6 +10,8 @@ build-dir = "book"
 
 [output.html]
 additional-js = ["highlight.js"]
+git-repository-url = "https://github.com/Seasawher/theorem_proving_in_lean4_ja"
+git-repository-icon = "fa-github"
 
 [output.html.code.hidelines]
 lean = "# "
