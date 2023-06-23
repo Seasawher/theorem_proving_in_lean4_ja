@@ -14,7 +14,9 @@
             "extensions": [
                 "mhutchie.git-graph",
                 "eamodio.gitlens",
-                "ms-azuretools.vscode-docker"
+                "tamasfe.even-better-toml",
+                "yzhang.markdown-all-in-one",
+                "leanprover.lean4"
             ]
         }
     }
