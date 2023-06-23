@@ -8,8 +8,5 @@ the [Lean 4 Manual](https://leanprover.github.io/lean4/doc/) to install Lean. Th
 written for Lean 2, and the Lean 3 version is available
 [here](https://leanprover.github.io/theorem_proving_in_lean/). -->
 
-このバージョンのテキストは，Lean 4 を使用していることを前提としています．
-Lean をインストールするには，[Lean 4 マニュアル](https://leanprover.github.io/lean4/doc/)の
-[セットアップのセクション](https://leanprover.github.io/lean4/doc/setup.html)を参照してください．
-本書の最初のバージョンは Lean 2 用に書かれていました．
-Lean 3 用のバージョンは[こちら](https://leanprover.github.io/theorem_proving_in_lean/)で入手できます．
+このバージョンのテキストは，Lean 4 を使用していることを前提としています．Lean をインストールするには，
+[Lean 4 マニュアル](https://leanprover.github.io/lean4/doc/)の[セットアップのセクション](https://leanprover.github.io/lean4/doc/setup.html)を参照してください．本書の最初のバージョンは Lean 2 用に書かれていました．Lean 3 用のバージョンは[こちら](https://leanprover.github.io/theorem_proving_in_lean/)で入手できます．
