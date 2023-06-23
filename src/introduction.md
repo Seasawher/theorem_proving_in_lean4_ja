@@ -97,7 +97,7 @@ theorem and_commutative (p q : Prop) : p ∧ q → q ∧ p :=
 -->
 
 ```lean
-{{#include ../lean/introduction.lean}}
+{{#include include/introduction.lean}}
 ```
 
 If you are reading the book inside of [VS Code](https://code.visualstudio.com/), you will see a button that reads "try it!" Pressing the button copies the example to your editor with enough surrounding context to make the code compile correctly. You can type
