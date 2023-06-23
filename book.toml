@@ -15,5 +15,8 @@ additional-js = ["highlight.js"]
 git-repository-url = "https://github.com/Seasawher/theorem_proving_in_lean4_ja"
 git-repository-icon = "fa-github"
 
+[output.html.search]
+enable = false
+
 [output.html.code.hidelines]
 lean = "# "
