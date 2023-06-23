@@ -1,9 +1,9 @@
 [book]
-authors = ["seasawher"]
-language = "en"
+authors = ["Jeremy Avigad", "Leonardo de Moura", "Soonho Kong", "Sebastian Ullrich"]
+language = "ja"
 multilingual = false
 src = "src"
-title = "Theorem Proving in Lean 4"
+title = "Theorem Proving in Lean 4 日本語版"
 
 [build]
 build-dir = "book"
