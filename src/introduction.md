@@ -86,12 +86,18 @@ with the system, and the mechanisms Lean offers for managing complex theories an
 
 Throughout the text you will find examples of Lean code like the one below:
 
+<!--
 ```lean
 theorem and_commutative (p q : Prop) : p ∧ q → q ∧ p :=
   fun hpq : p ∧ q =>
   have hp : p := And.left hpq
   have hq : q := And.right hpq
   show q ∧ p from And.intro hq hp
+```
+-->
+
+```lean
+{{#include ../lean/introduction.lean}}
 ```
 
 If you are reading the book inside of [VS Code](https://code.visualstudio.com/), you will see a button that reads "try it!" Pressing the button copies the example to your editor with enough surrounding context to make the code compile correctly. You can type
