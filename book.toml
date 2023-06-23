@@ -1,9 +1,10 @@
 [book]
+title = "Theorem Proving in Lean 4 日本語版"
+description = "プログラミング言語 Lean を使った定理証明支援について"
 authors = ["Jeremy Avigad", "Leonardo de Moura", "Soonho Kong", "Sebastian Ullrich"]
 language = "ja"
 multilingual = false
 src = "src"
-title = "Theorem Proving in Lean 4 日本語版"
 
 [build]
 build-dir = "book"
@@ -13,6 +14,9 @@ default-theme = "rust"
 additional-js = ["highlight.js"]
 git-repository-url = "https://github.com/Seasawher/theorem_proving_in_lean4_ja"
 git-repository-icon = "fa-github"
+
+[output.html.search]
+enable = false
 
 [output.html.code.hidelines]
 lean = "# "

@@ -1,17 +1,21 @@
-Introduction
+<!-- Introduction -->
+はじめに
 ============
 
-Computers and Theorem Proving
+<!-- Computers and Theorem Proving -->
+コンピュータと定理証明
 -----------------------------
 
-*Formal verification* involves the use of logical and computational methods to establish claims that are expressed in
+<!-- *Formal verification* involves the use of logical and computational methods to establish claims that are expressed in
 precise mathematical terms. These can include ordinary mathematical theorems, as well as claims that pieces of hardware
 or software, network protocols, and mechanical and hybrid systems meet their specifications. In practice, there is not a
 sharp distinction between verifying a piece of mathematics and verifying the correctness of a system: formal
 verification requires describing hardware and software systems in mathematical terms, at which point establishing claims
 as to their correctness becomes a form of theorem proving. Conversely, the proof of a mathematical theorem may require a
 lengthy computation, in which case verifying the truth of the theorem requires verifying that the computation does what
-it is supposed to do.
+it is supposed to do. -->
+
+**形式的検証**とは，論理的および計算的手法を使って，正確な数学用語で表現された主張を立証することです．これには通常の数学的な定理だけでなく，ハードウェアやソフトウェア，ネットワークプロトコル，機械システムやハイブリッドシステムがその仕様を満たしているという主張も含まれます．実際，数学の定理を検証することと，システムの正しさを検証することの間に明確な違いはありません: 形式的な検証では，ハードウェアやソフトウェアのシステムを数学的な言葉で記述する必要があるのですから，その正しさを検証することは定理証明の一形態といえます．逆に，数学の定理の証明が長い計算を必要とすることもあり，その場合定理の真偽を確かめるにはその計算がやるべきことをやっているか確かめる必要があります．
 
 The gold standard for supporting a mathematical claim is to provide a proof, and twentieth-century developments in logic
 show most if not all conventional proof methods can be reduced to a small set of axioms and rules in any of a number of
@@ -82,12 +86,18 @@ with the system, and the mechanisms Lean offers for managing complex theories an
 
 Throughout the text you will find examples of Lean code like the one below:
 
+<!--
 ```lean
 theorem and_commutative (p q : Prop) : p ∧ q → q ∧ p :=
   fun hpq : p ∧ q =>
   have hp : p := And.left hpq
   have hq : q := And.right hpq
   show q ∧ p from And.intro hq hp
+```
+-->
+
+```lean
+{{#include include/introduction.lean}}
 ```
 
 If you are reading the book inside of [VS Code](https://code.visualstudio.com/), you will see a button that reads "try it!" Pressing the button copies the example to your editor with enough surrounding context to make the code compile correctly. You can type
