@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Theorem Proving in Lean 4</a></li><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Dependent Type Theory</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Propositions and Proofs</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Quantifiers and Equality</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Tactics</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Interacting with Lean</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Inductive Types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Induction and Recursion</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Structures and Records</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Type Classes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> The Conversion Tactic Mode</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Axioms and Computation</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Theorem Proving in Lean 4</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Introduction</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Dependent Type Theory</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Propositions and Proofs</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Quantifiers and Equality</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Tactics</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Interacting with Lean</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Inductive Types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Induction and Recursion</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Structures and Records</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Type Classes</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> The Conversion Tactic Mode</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Axioms and Computation</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -144,98 +144,6 @@ written for Lean 2, and the Lean 3 version is available
 [here](https://leanprover.github.io/theorem_proving_in_lean/). -->
 <p>このバージョンのテキストは，Lean 4 を使用していることを前提としています．Lean をインストールするには，
 <a href="https://leanprover.github.io/lean4/doc/">Lean 4 マニュアル</a>の<a href="https://leanprover.github.io/lean4/doc/setup.html">セットアップのセクション</a>を参照してください．本書の最初のバージョンは Lean 2 用に書かれていました．Lean 3 用のバージョンは<a href="https://leanprover.github.io/theorem_proving_in_lean/">こちら</a>で入手できます．</p>
-<div style="break-before: page; page-break-before: always;"></div><!-- Introduction -->
-<h1 id="はじめに"><a class="header" href="#はじめに">はじめに</a></h1>
-<!-- Computers and Theorem Proving -->
-<h2 id="コンピュータと定理証明"><a class="header" href="#コンピュータと定理証明">コンピュータと定理証明</a></h2>
-<!-- *Formal verification* involves the use of logical and computational methods to establish claims that are expressed in
-precise mathematical terms. These can include ordinary mathematical theorems, as well as claims that pieces of hardware
-or software, network protocols, and mechanical and hybrid systems meet their specifications. In practice, there is not a
-sharp distinction between verifying a piece of mathematics and verifying the correctness of a system: formal
-verification requires describing hardware and software systems in mathematical terms, at which point establishing claims
-as to their correctness becomes a form of theorem proving. Conversely, the proof of a mathematical theorem may require a
-lengthy computation, in which case verifying the truth of the theorem requires verifying that the computation does what
-it is supposed to do. -->
-<p><strong>形式的検証</strong>とは，論理的および計算的手法を使って，正確な数学用語で表現された主張を立証することです．これには通常の数学的な定理だけでなく，ハードウェアやソフトウェア，ネットワークプロトコル，機械システムやハイブリッドシステムがその仕様を満たしているという主張も含まれます．実際，数学の定理を検証することと，システムの正しさを検証することの間に明確な違いはありません: 形式的な検証では，ハードウェアやソフトウェアのシステムを数学的な言葉で記述する必要があるのですから，その正しさを検証することは定理証明の一形態といえます．逆に，数学の定理の証明が長い計算を必要とすることもあり，その場合定理の真偽を確かめるにはその計算がやるべきことをやっているか確かめる必要があります．</p>
-<p>The gold standard for supporting a mathematical claim is to provide a proof, and twentieth-century developments in logic
-show most if not all conventional proof methods can be reduced to a small set of axioms and rules in any of a number of
-foundational systems. With this reduction, there are two ways that a computer can help establish a claim: it can help
-find a proof in the first place, and it can help verify that a purported proof is correct.</p>
-<p><em>Automated theorem proving</em> focuses on the &quot;finding&quot; aspect. Resolution theorem provers, tableau theorem provers, fast
-satisfiability solvers, and so on provide means of establishing the validity of formulas in propositional and
-first-order logic. Other systems provide search procedures and decision procedures for specific languages and domains,
-such as linear or nonlinear expressions over the integers or the real numbers. Architectures like SMT (&quot;satisfiability
-modulo theories&quot;) combine domain-general search methods with domain-specific procedures. Computer algebra systems and
-specialized mathematical software packages provide means of carrying out mathematical computations, establishing
-mathematical bounds, or finding mathematical objects. A calculation can be viewed as a proof as well, and these systems,
-too, help establish mathematical claims.</p>
-<p>Automated reasoning systems strive for power and efficiency, often at the expense of guaranteed soundness. Such systems
-can have bugs, and it can be difficult to ensure that the results they deliver are correct. In contrast, <em>interactive
-theorem proving</em> focuses on the &quot;verification&quot; aspect of theorem proving, requiring that every claim is supported by a
-proof in a suitable axiomatic foundation. This sets a very high standard: every rule of inference and every step of a
-calculation has to be justified by appealing to prior definitions and theorems, all the way down to basic axioms and
-rules. In fact, most such systems provide fully elaborated &quot;proof objects&quot; that can be communicated to other systems and
-checked independently. Constructing such proofs typically requires much more input and interaction from users, but it
-allows you to obtain deeper and more complex proofs.</p>
-<p>The <em>Lean Theorem Prover</em> aims to bridge the gap between interactive and automated theorem proving, by situating
-automated tools and methods in a framework that supports user interaction and the construction of fully specified
-axiomatic proofs. The goal is to support both mathematical reasoning and reasoning about complex systems, and to verify
-claims in both domains.</p>
-<p>Lean's underlying logic has a computational interpretation, and Lean can be viewed equally well as a programming
-language. More to the point, it can be viewed as a system for writing programs with a precise semantics, as well as
-reasoning about the functions that the programs compute. Lean also has mechanisms to serve as its own <em>metaprogramming
-language</em>, which means that you can implement automation and extend the functionality of Lean using Lean itself. These
-aspects of Lean are explored in a companion tutorial to this one, <a href="TBD">Programming in Lean 4</a>, though computational
-aspects of the system will make an appearance here.</p>
-<h2 id="about-lean"><a class="header" href="#about-lean">About Lean</a></h2>
-<p>The <em>Lean</em> project was launched by Leonardo de Moura at Microsoft Research Redmond in 2013. It is an ongoing, long-term
-effort, and much of the potential for automation will be realized only gradually over time. Lean is released under the
-<a href="LICENSE">Apache 2.0 license</a>, a permissive open source license that permits others to use and extend the code and
-mathematical libraries freely.</p>
-<p>To install Lean in your computer consider using the <a href="https://github.com/leanprover/lean4/blob/master/doc/quickstart.md">Quickstart</a> instructions. The Lean source code, and instructions for building Lean, are available at
-<a href="https://github.com/leanprover/lean4/">https://github.com/leanprover/lean4/</a>.</p>
-<p>This tutorial describes the current version of Lean, known as Lean 4.</p>
-<h2 id="about-this-book"><a class="header" href="#about-this-book">About this Book</a></h2>
-<p>This book is designed to teach you to develop and verify proofs in Lean. Much of the background information you will
-need in order to do this is not specific to Lean at all. To start with, you will learn the logical system that Lean is
-based on, a version of <em>dependent type theory</em> that is powerful enough to prove almost any conventional mathematical
-theorem, and expressive enough to do it in a natural way. More specifically, Lean is based on a version of a system
-known as the Calculus of Constructions with inductive types. Lean can not only define mathematical objects and express
-mathematical assertions in dependent type theory, but it also can be used as a language for writing proofs.</p>
-<p>Because fully detailed axiomatic proofs are so complicated, the challenge of theorem proving is to have the computer
-fill in as many of the details as possible. You will learn various methods to support this in <a href="dependent_type_theory.html">dependent type
-theory</a>. For example, term rewriting, and Lean's automated methods for simplifying terms and
-expressions automatically. Similarly, methods of <em>elaboration</em> and <em>type inference</em>, which can be used to support
-flexible forms of algebraic reasoning.</p>
-<p>Finally, you will learn about features that are specific to Lean, including the language you use to communicate
-with the system, and the mechanisms Lean offers for managing complex theories and data.</p>
-<p>Throughout the text you will find examples of Lean code like the one below:</p>
-<!--
-```lean
-theorem and_commutative (p q : Prop) : p ∧ q → q ∧ p :=
-  fun hpq : p ∧ q =>
-  have hp : p := And.left hpq
-  have hq : q := And.right hpq
-  show q ∧ p from And.intro hq hp
-```
--->
-<pre><code class="language-lean">theorem and_commutative (p q : Prop) : p ∧ q → q ∧ p :=
-  fun hpq : p ∧ q =&gt;
-  have hp : p := And.left hpq
-  have hq : q := And.right hpq
-  show q ∧ p from And.intro hq hp
-</code></pre>
-<p>If you are reading the book inside of <a href="https://code.visualstudio.com/">VS Code</a>, you will see a button that reads &quot;try it!&quot; Pressing the button copies the example to your editor with enough surrounding context to make the code compile correctly. You can type
-things into the editor and modify the examples, and Lean will check the results and provide feedback continuously as you
-type. We recommend running the examples and experimenting with the code on your own as you work through the chapters
-that follow. You can open this book on VS Code by using the command &quot;Lean 4: Open Documentation View&quot;.</p>
-<h2 id="acknowledgments"><a class="header" href="#acknowledgments">Acknowledgments</a></h2>
-<p>This tutorial is an open access project maintained on Github. Many people have contributed to the effort, providing
-corrections, suggestions, examples, and text. We are grateful to Ulrik Buchholz, Kevin Buzzard, Mario Carneiro, Nathan
-Carter, Eduardo Cavazos, Amine Chaieb, Joe Corneli, William DeMeo, Marcus Klaas de Vries, Ben Dyer, Gabriel Ebner,
-Anthony Hart, Simon Hudon, Sean Leather, Assia Mahboubi, Gihan Marasingha, Patrick Massot, Christopher John Mazey,
-Sebastian Ullrich, Floris van Doorn, Daniel Velleman, Théo Zimmerman, Paul Chisholm, Chris Lovett, and Siddhartha Gadgil for their contributions.  Please see <a href="https://github.com/leanprover/">lean prover</a> and <a href="https://github.com/leanprover-community/">lean community</a> for an up to date list
-of our amazing contributors.</p>
 
                     </main>
 
