@@ -2,7 +2,7 @@
 
 [Theorem Proving in Lean 4](./README.md)
 
-- [Introduction](./introduction.md)
+- [Introduction]()
 - [Dependent Type Theory]()
 - [Propositions and Proofs]()
 - [Quantifiers and Equality]()
