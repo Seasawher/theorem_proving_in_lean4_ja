@@ -17,19 +17,23 @@ it is supposed to do. -->
 
 **形式的検証**とは，論理的および計算的手法を使って，正確な数学用語で表現された主張を立証することです．これには通常の数学的な定理だけでなく，ハードウェアやソフトウェア，ネットワークプロトコル，機械システムやハイブリッドシステムがその仕様を満たしているという主張も含まれます．実際，数学の定理を検証することと，システムの正しさを検証することの間に明確な違いはありません: 形式的な検証では，ハードウェアやソフトウェアのシステムを数学的な言葉で記述する必要があるのですから，その正しさを検証することは定理証明の一形態といえます．逆に，数学の定理の証明が長い計算を必要とすることもあり，その場合定理の真偽を確かめるにはその計算がやるべきことをやっているか確かめる必要があります．
 
-The gold standard for supporting a mathematical claim is to provide a proof, and twentieth-century developments in logic
+<!-- The gold standard for supporting a mathematical claim is to provide a proof, and twentieth-century developments in logic
 show most if not all conventional proof methods can be reduced to a small set of axioms and rules in any of a number of
 foundational systems. With this reduction, there are two ways that a computer can help establish a claim: it can help
-find a proof in the first place, and it can help verify that a purported proof is correct.
+find a proof in the first place, and it can help verify that a purported proof is correct. -->
 
-*Automated theorem proving* focuses on the "finding" aspect. Resolution theorem provers, tableau theorem provers, fast
+数学的な主張を示すためのゴールド・スタンダードは，証明を与えることです．20世紀の論理学の発展により，従来の証明方法のすべてではないにせよ，そのほとんどが，基礎体系における少数の公理と規則に還元できることがわかっています．この還元に基づき，主張を確かめるためにコンピュータを役立てる方法性が2つあります．証明を見つけ出すこと，そして証明とされるものが正しいか検証することです．
+
+<!-- *Automated theorem proving* focuses on the "finding" aspect. Resolution theorem provers, tableau theorem provers, fast
 satisfiability solvers, and so on provide means of establishing the validity of formulas in propositional and
 first-order logic. Other systems provide search procedures and decision procedures for specific languages and domains,
 such as linear or nonlinear expressions over the integers or the real numbers. Architectures like SMT ("satisfiability
 modulo theories") combine domain-general search methods with domain-specific procedures. Computer algebra systems and
 specialized mathematical software packages provide means of carrying out mathematical computations, establishing
 mathematical bounds, or finding mathematical objects. A calculation can be viewed as a proof as well, and these systems,
-too, help establish mathematical claims.
+too, help establish mathematical claims. -->
+
+**自動定理証明**は，「発見」の側面に焦点を当てています．命題論理や一階述語論理における数式の妥当性を証明するものとして，導出原理(Resolution)による定理証明器，タブローによる定理証明器，高速充足可能性ソルバなどがあります．整数や実数に対する線形または非線形な式など，特定の言語や領域に対する検索・決定手続きを提供するシステムもあります．領域一般的(domain-general)な検索方法と領域固有(domain-specific)な手続きを組み合わせたものとして，SMT(satisfiability modulo theories)のようなアーキテクチャがあります．数学的計算を実行したり，数学的な限界(bounds)を調べたり，数学的対象を見つけたりする手段を提供してくれるものとして，数式処理システムや専門の数学ソフトウェア・パッケージがあります．計算も証明と見做すことができて，こういったシステムも数学的主張を確かめるのに役に立ちます．
 
 Automated reasoning systems strive for power and efficiency, often at the expense of guaranteed soundness. Such systems
 can have bugs, and it can be difficult to ensure that the results they deliver are correct. In contrast, *interactive
